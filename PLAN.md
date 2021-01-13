@@ -45,7 +45,7 @@ Développeur Web et/ou Mobile.
 
 ## Pré-requis
 
-???
+Aucun
 
 ## Programme
 
@@ -84,7 +84,7 @@ Développeur Web et/ou Mobile.
     - Utilisation
     - Pricing
 8. Messaging
-    - Présentaiton
+    - Présentation
     - Utilisation en web
     - Utilisation en mobile
     - Pricing
