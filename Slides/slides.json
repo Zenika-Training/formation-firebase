@@ -1,11 +1,12 @@
 [
   "00_schedule.md",
   "01_presentation.md",
-  "02_authentication.md",
-  "03_cloud_firestore.md",
-  "04_realtime_database.md",
-  "05_hosting.md",
-  "06_storage.md",
-  "07_messaging.md",
-  "08_to_go_further.md"
+  "02_getting_started.md",
+  "03_authentication.md",
+  "04_cloud_firestore.md",
+  "05_realtime_database.md",
+  "06_hosting.md",
+  "07_storage.md",
+  "08_messaging.md",
+  "09_to_go_further.md"
 ]
