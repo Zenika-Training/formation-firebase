@@ -26,7 +26,8 @@ Notes :
 
 ## Presentation
 
- - Realtime key:value storage.
+ - Synchronized in realtime to every connected client.
+ - key:value storage.
  - Can be seen as a giant realtime JSON file.
  - **Not** designed for queries, search and relational behavior.
  - Useful to store small data that's updated very often.

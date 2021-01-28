@@ -27,6 +27,7 @@ Notes :
 ## Presentation
 
 - Used to send notifications to applications.
+- FCM backend provided by Google.
 - Can use topics to register multiple users to the same notification type.
 - Integrates easily with C++, Unity, Mobile and Web, with the same code to send a notification in the background.
 
@@ -34,6 +35,37 @@ Notes :
 
 Notes :
 
+
+## Architectural overview
+
+<img src="resources/diagram-FCM.png" height="300">
+
+Notes :
+
+
+## Lifecycle flow
+**Draft (todo a schema)**
+Scenario: Login & Followed by another user
+
+Login to the app.
+          ⬇️
+Device registers with FCM.
+          ⬇️
+FCM send token to device & store it.
+          ⬇️
+Subscribe to the topic : "When i have a new follower".
+          ⬇️
+Another user is following me.
+          ⬇️
+Update the user in the database (Firestore) `Write /users/{uid}/followers/{id}`.
+          ⬇️
+Triggers the cloud function that listens when the user has new followers.
+          ⬇️
+This cloud function sends a notification to the user with a new follower using his device token.
+
+
+
+Notes :
 
 
 ## Using it for web
