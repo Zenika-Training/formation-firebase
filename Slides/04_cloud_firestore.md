@@ -30,6 +30,7 @@ Notes :
  - Better at reading than writing.
  - Not designed for aggregation queries (count, filter, etc).
  - *Schemaless*.
+ - Offline persistence.
 
 <div style="display:flex">
 <img src="resources/mongodb-logo.png" height="200"><img src="resources/elastic-logo.png" height="200"><img src="resources/couchbase-logo.png" height="200">

@@ -19,3 +19,13 @@ Notes :
 - [Storage](#/7)
 - [Messaging](#/8)
 - **[To go further](#/9)**
+
+Notes : 
+
+
+
+# To go further
+
+ - Official documentation website: https://firebase.google.com/docs
+ - Aggregation queries on firestore: https://firebase.google.com/docs/firestore/solutions/aggregation
+ - Firebase mailing list: https://groups.google.com/g/firebase-talk

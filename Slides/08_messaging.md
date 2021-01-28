@@ -19,3 +19,50 @@ Notes :
 - [Storage](#/7)
 - **[Messaging](#/8)**
 - [To go further](#/9)
+
+Notes :
+
+
+
+## Presentation
+
+- Used to send notifications to applications.
+- Can use topics to register multiple users to the same notification type.
+- Integrates easily with C++, Unity, Mobile and Web, with the same code to send a notification in the background.
+
+<img src="resources/cloud_messaging_logo.png" height="300">
+
+Notes :
+
+
+
+## Using it for web
+
+In main UI code:
+```js
+  messaging.onMessage((payload) => {
+    console.log('Message received. ', payload);
+  });
+```
+
+In a service worker:
+```js
+messaging.onBackgroundMessage(function(payload) {
+  console.log('[firebase-messaging-sw.js] Received background message ', payload);
+  // Customize notification here
+  const notificationTitle = 'Background Message Title';
+  const notificationOptions = {
+    body: 'Background Message body.',
+    icon: '/firebase-logo.png'
+  };
+
+  self.registration.showNotification(notificationTitle,
+    notificationOptions);
+});
+```
+
+Notes : No pricing slide because it's entirely free.
+
+
+
+<!-- .slide: class="page-tp7" -->

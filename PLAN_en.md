@@ -69,6 +69,5 @@ None
 8. Messaging
   - Presentation
   - Using it for web
-  - Using it for mobile
   - Pricing
 9. To go further
