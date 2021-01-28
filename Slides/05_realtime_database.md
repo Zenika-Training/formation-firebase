@@ -49,6 +49,69 @@ Notes : Getting smaller data means less bandwidth usage
 
 
 
+## Usage - Create
+
+```ts
+this.angularFirebase
+  .list<User>('users')
+  .push({name: 'James Holden', crew: 'Rocinante'});
+```
+
+Returns the unique identifier of the document that has been added.
+
+Notes : Disclaimer: examples are using angularFirebase, but other languages and implementations are available on officiel docs website
+
+
+
+## Usage - Read
+
+```ts
+// Get one element
+this.angularFirebase
+  .object<User>('users/00086tE6xfgyC1RCqJ2EaTncmXx1')
+  .valueChanges();
+
+// Get a list of elements
+this.angularFirebase
+  .list<User>('users')
+  .valueChanges();
+```
+
+Notes : Disclaimer: examples are using angularFirebase, but other languages and implementations are available on officiel docs website
+
+
+
+## Usage - Update
+```ts
+// Partial update, non destructive
+this.angularFirebase
+  .object<User>('users/00086tE6xfgyC1RCqJ2EaTncmXx1')
+  .update({name: 'Fred Johnson'});
+
+// Full overwrite
+this.angularFirebase
+  .object<User>('users/00086tE6xfgyC1RCqJ2EaTncmXx1')
+  .set({name: 'Fred Johnson', crew: 'APE'});
+```
+
+Some transactional operations are also possible, to increment a field value server-side.
+
+Notes : Disclaimer: examples are using angularFirebase, but other languages and implementations are available on officiel docs website
+
+
+
+## Usage - Delete
+
+```ts
+this.angularFirebase
+  .object<User>('users/00086tE6xfgyC1RCqJ2EaTncmXx1')
+  .remove();
+```
+
+Notes : Disclaimer: examples are using angularFirebase, but other languages and implementations are available on officiel docs website
+
+
+
 ## Security
 
 <!-- .slide: class="page-demo" -->
