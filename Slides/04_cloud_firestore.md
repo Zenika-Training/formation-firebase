@@ -67,6 +67,77 @@ Notes :
 
 
 
+## Usage - Create
+
+```ts
+this.angularFirestore
+  .collection<User>('users')
+  .add({name: 'James Holden', crew: 'Rocinante'});
+```
+
+Returns the unique identifier of the document that has been added.
+
+Notes : Disclaimer: examples are using angularFire, but other languages and implementations are available on officiel docs website
+
+
+
+## Usage - Read
+
+```ts
+// Get a specific document
+const user$: Observable<User> = this.angularFirestore
+  .doc<User>('users/00086tE6xfgyC1RCqJ2EaTncmXx1')
+  .valueChanges();
+
+// Get an entire collection
+const users$: Observable<User[]> = this.angularFirestore
+  .collection<User>('users')
+  .valueChanges();
+
+// Get an entire collection with a query
+const usersNamedJamesHolden$: Observable<User[]> = this.angularFirestore
+  .collection<User>('users', ref => ref.where('name', '==', 'James Holden'))
+  .valueChanges();
+```
+
+Notes : Disclaimer: examples are using angularFire, but other languages and implementations are available on officiel docs website
+
+
+
+## Usage - Update
+```ts
+// Partial update, non destructive
+this.angularFirestore
+  .collection<User>('users')
+  .doc('00086tE6xfgyC1RCqJ2EaTncmXx1')
+  .update({name: 'Fred Johnson'});
+
+// Full overwrite
+this.angularFirestore
+  .collection<User>('users')
+  .doc('00086tE6xfgyC1RCqJ2EaTncmXx1')
+  .set({name: 'Fred Johnson', crew: 'APE'});
+```
+
+Some transactional operations are also possible, to increment a field value server-side.
+
+Notes : Disclaimer: examples are using angularFire, but other languages and implementations are available on officiel docs website
+
+
+
+## Usage - Delete
+
+```ts
+this.angularFirestore
+  .collection<User>('users')
+  .doc('00086tE6xfgyC1RCqJ2EaTncmXx1')
+  .delete();
+```
+
+Notes : Disclaimer: examples are using angularFire, but other languages and implementations are available on officiel docs website
+
+
+
 ## Limits and optimizations
 
 - 1 write operation per second per document.
