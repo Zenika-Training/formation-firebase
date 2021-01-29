@@ -40,9 +40,9 @@ CLI Tool to interact with Firebase, can be installed using Node.js.
 Interesting features:
 
  - Deploy a website.
- - Version rules inside your code.
+ - Security rules versioned inside your code.
  - Switch projects with a single command line.
- - Emulators for functions, databases.
+ - Emulators for functions, databases, authentication, etc.
 
 Notes : 
 

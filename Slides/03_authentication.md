@@ -37,7 +37,10 @@ Notes :
 
 ## Sign-in methods
 
- - Several methods available.
+ - Several methods available :
+    - Email and password based authentication.
+    - Federated identity providers (Google, Apple, Twitter, Facebook, Github).
+    - Phone number authentication.
  - Client libraries provide implementation.
  - Don't forget to configure authorized domains.
  - Hosts configurations for maximum accounts created per day, email unicity, etc.
