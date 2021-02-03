@@ -37,11 +37,15 @@ Notes :
 
 ## Usage
 
-- Design it like a JSON file.
-- Keep it small and meaningful.
-- Make it easy to access.
+```ts
+function uploadFile(event: any): void {
+  const file = event.target.files[0];
+  const filePath = 'name-your-file-path-here';
+  const task = this.storage.upload(filePath, file);
+}
+```
 
-Notes :
+Notes : You can also upload blobs using put or putString, see https://github.com/angular/angularfire/blob/master/docs/storage/storage.md
 
 
 
