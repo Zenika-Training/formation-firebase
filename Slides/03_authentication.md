@@ -49,6 +49,23 @@ Notes :
 
 
 
+## Usage
+
+```ts
+// Google oauth
+this.angularFireAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+// Facebook oauth
+this.angularFireAuth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
+// Email/password auth
+this.angularFireAuth.signInWithEmailAndPassword(email, password)
+// Sign out
+this.angularFireAuth.signOut();
+```
+
+Notes :
+
+
+
 ## Templates
 
  - Administration emails (password reset, email verification, email modification).
