@@ -1,0 +1,86 @@
+<nz-layout class='app-layout'>
+  <nz-layout>
+    <nz-header>
+      <div fxLayout='row' fxLayoutAlign='space-between center'>
+        <div class='sidebar-logo'>
+          <a href='https://ng.ant.design/' target='_blank'>
+            <img src='https://ng.ant.design/assets/img/logo.svg' alt='logo'>
+            <h1>Quacker</h1>
+          </a>
+        </div>
+        <div class='auth-block'>
+          <div *ngIf='user$ | async as user; else login'>
+            <img [src]='user.photoURL' [alt]='user.displayName' class='avatar'>
+          </div>
+          <ng-template #login>
+            <button nz-button nzShape='circle' (click)='googleOauth()'>
+              <i nz-icon nzType='google' nzTheme='outline'></i>
+            </button>
+          </ng-template>
+        </div>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class='input-block' *ngIf='user$ | async as user'>
+        <nz-avatar [nzSrc]='user.photoURL'></nz-avatar>
+        <div class='input-box'>
+            <textarea nz-input placeholder="What's new ?" [(ngModel)]='currentInputContent'
+                      [nzAutosize]='{ minRows: 3, maxRows: 5 }'></textarea>
+          <div fxLayout='row' fxLayoutGap='5px'>
+            <div>
+              <nz-upload
+                class='upload-list-inline'
+                nzListType='picture'
+                [nzBeforeUpload]='beforeUpload'
+                [nzCustomRequest]='customRequest'
+                [(nzFileList)]='currentQuackFiles'
+              >
+                <button nz-button *ngIf='currentQuackFiles.length === 0'>
+                  <span><i nz-icon nzType='upload'></i> Add an image</span>
+                </button>
+              </nz-upload>
+            </div>
+            <div>
+              <button [disabled]='currentInputContent.length === 0' nz-button class='quack-button' nzType='primary'
+                      (click)='createQuack(user.displayName, user.photoURL)'>Quack this !
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='inner-content'>
+        <div class='quacks'>
+          <ng-template #noQuacks>
+            <nz-empty nzNotFoundContent='No quacks yet'></nz-empty>
+          </ng-template>
+          <nz-list nzItemLayout='vertical' [nzNoResult]='noQuacks'>
+            <nz-list-item *ngFor='let quack of quacks$ | async'>
+              <nz-list-item-meta [nzAvatar]='avatar'>
+                <ng-template #avatar>
+                  <nz-avatar [nzSrc]='quack.authorAvatar'></nz-avatar>
+                </ng-template>
+                <nz-list-item-meta-title>
+                  {{ quack.authorName }}
+                </nz-list-item-meta-title>
+                <nz-list-item-meta-description>
+                  {{quack.date.toMillis() | date}}
+                </nz-list-item-meta-description>
+              </nz-list-item-meta>
+              {{ quack.content }}
+              <ul nz-list-item-actions>
+                <nz-list-item-action>
+                  <div class='upvote-button' (click)='upvote(quack)'>
+                    <i nz-icon nzType='star-o' style='margin-right: 8px;'></i> {{quack.score}}
+                  </div>
+                </nz-list-item-action>
+              </ul>
+              <nz-list-item-extra>
+                <img *ngIf='quack.image' [src]="('images/' + quack.image) | getDownloadURL" alt=''>
+              </nz-list-item-extra>
+            </nz-list-item>
+          </nz-list>
+        </div>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
