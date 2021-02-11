@@ -6,9 +6,11 @@
 <div class="pb"></div>
 
 
-## Pré-requis
+## Prerequisites
 
 ### Installation
 
-Installer les technos demandées
+Install the requested technologies:
+
+ - Node.js / npm
 

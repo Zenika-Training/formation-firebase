@@ -40,8 +40,7 @@ export class QuacksService {
    * @param quack the quack to create
    */
   public createQuack(quack: Quack): Observable<DocumentReference> {
-    // TODO implement me in TP3
-    return of(null);
+    return from(this.collectionRef.add(quack));
   }
 
   /**
@@ -50,8 +49,8 @@ export class QuacksService {
    * @private
    */
   private getQuackScore(quack: Quack): Observable<number> {
-    // TODO implement me in TP 4
-    return of(0);
+      // TODO implement me in TP 4
+      return of(0);
   }
 
   public upvote(quack: Quack): void {

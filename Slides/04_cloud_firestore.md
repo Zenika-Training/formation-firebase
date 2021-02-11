@@ -211,7 +211,3 @@ Notes :
 
 
 <!-- .slide: class="page-tp3" -->
-
-
-
-<!-- .slide: class="page-tp4" -->
