@@ -53,7 +53,7 @@ Device registers with FCM.
           ⬇️
 FCM send token to device & store it.
           ⬇️
-Subscribe to the topic : "When i have a new follower".
+Subscribe to the topic : "When I have a new follower".
           ⬇️
 Another user is following me.
           ⬇️
@@ -95,6 +95,4 @@ messaging.onBackgroundMessage(function(payload) {
 
 Notes : No pricing slide because it's entirely free.
 
-
-
-<!-- .slide: class="page-tp7" -->
+No TP neither because setting up messaging is very dependant on platform, better spend more time explaining it deeply.

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {AngularFirestore, DocumentReference} from '@angular/fire/firestore';
-import {combineLatest, from, Observable, of} from 'rxjs';
+import {combineLatest, from, Observable} from 'rxjs';
 import {Quack} from '../models/quack';
 import {map, switchMap} from 'rxjs/operators';
 import {AngularFireDatabase} from '@angular/fire/database';
@@ -31,6 +31,8 @@ export class QuacksService {
             }));
         })
     );
+
+    public quacksCounter$ = this.angularFireRealtimeDatabase.object<number>(`quacks_counter`).valueChanges();
 
     constructor(private angularFirestore: AngularFirestore, private angularFireRealtimeDatabase: AngularFireDatabase) {
     }

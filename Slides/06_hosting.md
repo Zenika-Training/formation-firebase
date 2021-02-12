@@ -96,4 +96,4 @@ Notes : Don't forget this applies after free tier, so everything is paid after f
 
 
 
-<!-- .slide: class="page-tp6" -->
+<!-- .slide: class="page-tp5" -->

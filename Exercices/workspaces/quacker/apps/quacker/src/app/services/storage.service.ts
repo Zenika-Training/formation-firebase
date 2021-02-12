@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { from, Observable } from 'rxjs';
+import { of, from, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,7 @@ export class StorageService {
   }
 
   public upload(filePath: string, file: File): Observable<void> {
-    return from(this.angularFireStorage.upload(filePath, file).then());
+    // TODO Implement me in TP6
+    return of(null)
   }
 }

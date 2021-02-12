@@ -1,4 +1,5 @@
 node_modules
+workspaces/quacker/node_modules
 .idea
 PDF
 dist
