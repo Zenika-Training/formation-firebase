@@ -1,5 +1,9 @@
 [
   "Cahier.md",
-  "PW1.md",
-  "PW2.md"
+  "01_create_project.md",
+  "02_add_authentication.md",
+  "03_quacks_database.md",
+  "04_vote_counters.md",
+  "05_hosting_quacker.md",
+  "06_adding_images.md"
 ]
